@@ -6,7 +6,7 @@
  * @license MIT License
  * @example 
  *
- * var hs = hoverSum();
+ * var hs = new hoverSum();
  *
  */
 ;var hoverSum = (function(){
