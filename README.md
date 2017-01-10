@@ -1,2 +1,8 @@
 # hoverSum
-A tool for viewing quick sums of numbers in web apps, by hovering over them.
+A tool for adding currency numbers on a webpage together, simply by hovering over them.
+
+Simply create a hoverSum object, and then the tool will begin.
+
+var hs = new hoverSum();
+
+Hover over currency numbers on the page to see them add up.
