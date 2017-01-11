@@ -1,18 +1,3 @@
-// This tool is built so you can add numbers you hover over, without repeating them.
-//
-// Methods:
-// hs.start();
-// hs.reset();
-// hs.destroy();
-// hs.pause(); // Let's you start checking sums with another hoverSum object
-// hs.resume(); // Let's control return to this hoverSum object. You probably have to pause all the other ones first...
-
-// Have an option to upload a word doc onto the page,
-// excel file, whatever.
-// Separate them to get this to work. For instance, seperate each word in the word doc into it's own div.
-// str.replace(/(\w) (\w)/g, "<span>$1</span>&nbsp;<span>$2</span>");
-// or just str.replace(/\s+/g, "</span> <span>"); Then str = "<span>" + str + "</span>";
-
 /**
  * @file hoverSum.js
  * @description A tool for adding numbers on a webpage together, simply by hovering over them.
