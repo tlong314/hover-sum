@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui' />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<style>
+
+input[type="text"] {
+	text-align: right;
+}
+
+#dataTable {
+	border-collapse: collapse;
+}
+
+#dataTable th, #dataTable td {
+	text-align: center;
+	border: 1px solid #777;
+	padding: 5px 10px;
+}
+
+#dataTable th {
+	font-weight: bold;
+	background: green;
+	color: white;
+}
+
+#dataTable tr:nth-of-type(2n) td {
+	background: #eaeaff;
+}
+</style>
+</head>
+<body>
+
+<input type="text" value="$1,432.00" />
+
+<br/>
+<br/>
+
+<table id="dataTable">
+	<thead>
+		<tr>
+			<th>Transaction ID</th>
+			<th>Description</th>
+			<th># of Items</th>
+			<th>User</th>
+			<th>Cost</th>
+			<th>Transaction Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Books</td>
+			<td>14</td>
+			<td>Schmoe, Joe</td>
+			<td>$205.20</td>
+			<td>1/12/16</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Videos</td>
+			<td>10</td>
+			<td>Jones, Bud</td>
+			<td>$415.50</td>
+			<td>2/08/16</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Food</td>
+			<td>34</td>
+			<td>Mann, Max</td>
+			<td>$2,180.00</td>
+			<td>3/18/16</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Computers</td>
+			<td>52</td>
+			<td>Alz, Alex</td>
+			<td>$2,054,065.23</td>
+			<td>6/22/16</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Uniforms</td>
+			<td>3</td>
+			<td>Crock, James</td>
+			<td>$34,888.02</td>
+			<td>9/15/16</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Travel</td>
+			<td>14</td>
+			<td>Brown, Betty</td>
+			<td>$1,284,445.93</td>
+			<td>1/02/17</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<br/>
+Hover your mouse over numbers in the table to see them added to the total sum.
+<br/>
+<br/>
+Click on the hovering sum to reset the value to zero.
+<script src="hoverSum.js"></script>
+<script>
+var hs;
+
+window.onload = function() {
+	hs = new hoverSum();
+};
+</script>
+</body>
+</html>
