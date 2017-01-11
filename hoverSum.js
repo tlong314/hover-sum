@@ -65,39 +65,43 @@
 	};
 
 	document.body.append(span);
-	
+
 	var hoverSum = function() {
 		window.addEventListener("mousemove", function(e) {
 			var t = e.target,
 				text = t.innerText.replace(/,|\$/g, ""),
 				num = parseFloat(text, 10);
 
-			if(isNaN(num)) {
-				num = parseFloat(t.value, 10);
+			if(/[^0-9.]/.test(text)) { // For instance, dates like 6/22/14
+				return;
+			}
 
+			if(isNaN(num)) {
+				if(t.value) {
+					num = parseFloat(t.value.replace(/,|\$/g, ""), 10);
+				}
+				
 				if(isNaN(num)) {
 					return;
 				}
 			}
 
-			if(/[^0-9]/.test(text)) { // For instance, dates like 6/22/14
-				return;
-			}
-			
 			if(!t.classList.contains("hoverCounted")) {
 				runningSum += num;
 				t.classList.add("hoverCounted");
-				span.style.left = document.body.scrollLeft + e.clientX + 30 + "px";
-				span.style.top = document.body.scrollTop + e.clientY - 40 + "px";
+				span.style.left = document.body.scrollLeft + e.clientX + 20 + "px";
+				if(e.clientY > 80) {
+					span.style.top = document.body.scrollTop + e.clientY - 40 + "px";
+				} else {
+					span.style.top = document.body.scrollTop + e.clientY + 40 + "px";
+				}
+				
 				span.innerHTML = formatToCurrency(runningSum, true);
-				console.log(runningSum, e.clientX, e.clientY);
 			}
 		}, false);
 
 		window.addEventListener("drop", function(e) {
-			
-			console.log("mouseup", e.clientX, e.clientY);
-			
+			e.preventDefault();
 			span.style.left = document.body.scrollLeft + e.clientX + 30 + "px";
 			span.style.top = document.body.scrollTop + e.clientY - 40 + "px";
 		}, false);
