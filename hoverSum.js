@@ -43,7 +43,11 @@
 			i++;
 		}
 
-		return (include$ ? "$" : "") + dollarsRev.reverse().join("") + "." + cents;
+		if(neg) {
+			return "(" + (include$ ? "$" : "") + dollarsRev.reverse().join("") + "." + cents + ")";
+		} else {
+			return (include$ ? "$" : "") + dollarsRev.reverse().join("") + "." + cents;
+		}
 	}; // End formatToCurrency()
 
 	var runningSum = 0,
@@ -69,16 +73,16 @@
 	var hoverSum = function() {
 		window.addEventListener("mousemove", function(e) {
 			var t = e.target,
-				text = t.innerText.replace(/,|\$/g, ""),
+				text = t.innerText.replace(/,|\$/g, "").replace(/^\((.+)\)$/, "-$1"),
 				num = parseFloat(text, 10);
 
-			if(/[^0-9.]/.test(text)) { // For instance, dates like 6/22/14
+			if(/[^0-9.\-]/.test(text)) { // For instance, dates like 6/22/14
 				return;
 			}
 
 			if(isNaN(num)) {
 				if(t.value) {
-					num = parseFloat(t.value.replace(/,|\$/g, ""), 10);
+					num = parseFloat(t.value.replace(/,|\$/g, "").replace(/^\((.+)\)$/, "-$1"), 10);
 				}
 				
 				if(isNaN(num)) {
