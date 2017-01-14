@@ -1,4 +1,4 @@
-# hoverSum
+# HoverSum
 A tool for adding currency numbers on a webpage together, simply by hovering over them.
 
 After referencing the hoversum.js script, simply create a hoverSum object, and then the tool will begin.
