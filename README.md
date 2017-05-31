@@ -3,7 +3,9 @@ A tool for adding currency numbers on a webpage together, simply by hovering ove
 
 After referencing the hoversum.js script, simply create a hoverSum object, and then the tool will begin.
 
+```javascript
 var hs = new HoverSum();
+```
 
 Hover over currency numbers on the page to see them add up, into a hovering sum value. Click on the hoversum value to reset it to zero.
 
